@@ -1,10 +1,7 @@
 # Pulse of Prevention: Analyzing Heart Health for Better Outcomes
 ## Case Study Document
 
-**Prepared for:** HealthPulse Analytics & Executive Clinical Leadership  
-**Domain:** Cardiology, Clinical Informatics & Healthcare Operations  
 **Dataset Reference:** [Kaggle Heart Disease Dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)  
-**Deliverable Type:** Comprehensive Case Study Specification  
 
 ---
 

@@ -1,10 +1,7 @@
 # Pulse of Prevention: Analyzing Heart Health for Better Outcomes
-## Comprehensive Solution Guide & Technical Manual
+## Comprehensive Solution Guide 
 
-**Prepared by:** HealthPulse Analytics Data Science & Clinical Research Unit  
-**Target Audience:** Clinical Data Analysts, Healthcare Providers, Chief Medical Officers  
 **Source Dataset:** 1,025 Patient Cardiology Cohort (`heart.csv`)  
-**Companion Artifacts:** High-Resolution Figures in `./Heart_Health_Images/`  
 
 ---
 
@@ -292,7 +289,7 @@ Fluoroscopy vessel coloring assesses coronary luminal narrowing. While 56.4% exh
 age_corr_chol = df[['age', 'chol']].corr().iloc[0, 1]
 print(f"Pearson Correlation (Age vs. Chol): {age_corr_chol:.4f}")
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Age vs Serum Cholestrol.png`
+*Visual:* `Heart_Health_Images/Age vs Serum Cholestrol.png`
 
 #### Exact Output & Findings
 - **Pearson Correlation Coefficient ($r$):** **$+0.2198$** ($p < 0.0001$)
@@ -316,7 +313,7 @@ df['age_group'] = pd.cut(df['age'], bins=age_bins, labels=age_labels)
 cp_by_age = df.groupby('age_group', observed=False)['cp'].value_counts(normalize=True).unstack() * 100
 print(cp_by_age.round(1))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Chest Pain Types Across Age Groups.png`
+*Visual :* `Heart_Health_Images/Chest Pain Types Across Age Groups.png`
 
 #### Exact Output & Breakdown Table
 | Age Group | cp = 0 (Typical) | cp = 1 (Atypical) | cp = 2 (Non-Anginal) | cp = 3 (Asymptomatic) |
@@ -342,7 +339,7 @@ Typical angina (`cp = 0`) surges from 33.8% in young patients to 58.3% in the 60
 hr_angina = df.groupby('exang')['thalach'].agg(['count', 'mean', 'median', 'std'])
 print(hr_angina.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Peak Heart Rate_ Angina vs. No Angina.png`
+*Visual :* `Heart_Health_Images/Peak Heart Rate_ Angina vs. No Angina.png`
 
 #### Exact Output & Findings
 - **Without Angina (`exang = 0`):** Mean = **155.34 bpm** (Median: 159.5, Std: 21.51)
@@ -391,7 +388,7 @@ In this cardiology cohort, female patients present with statistically significan
 fbs_target_crosstab = pd.crosstab(df['fbs'], df['target'], normalize='index') * 100
 print("Heart Disease Rate by Fasting Blood Sugar:\n", fbs_target_crosstab.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Heart Disease Presence by Fasting Blood Sugar.png`
+*Visual:* `Heart_Health_Images/Heart Disease Presence by Fasting Blood Sugar.png`
 
 #### Exact Output & Findings
 - **Normal FBS ($\le 120\text{ mg/dl}$):** Heart Disease = **52.18%** (455 / 872)
@@ -413,7 +410,7 @@ In isolation, a binary fasting glucose split ($>120\text{ mg/dl}$) does not disc
 ca_target_crosstab = pd.crosstab(df['ca'], df['target'], normalize='index') * 100
 print("Heart Disease Rate by Fluoroscopy Vessel Count:\n", ca_target_crosstab.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Heart Disease Distribution by Number of Major Vessels (ca).png`
+*Visual:* `Heart_Health_Images/Heart Disease Distribution by Number of Major Vessels (ca).png`
 
 #### Exact Output & Breakdown Table
 | Vessel Count (`ca`) | No Heart Disease (`target = 0`) | Heart Disease Present (`target = 1`) | Total Patients |
@@ -439,7 +436,7 @@ In the original Cleveland data architecture, `ca = 0` reflects an absence of cal
 oldpeak_by_cp = df.groupby('cp')['oldpeak'].agg(['count', 'mean', 'median', 'std'])
 print("ST Depression by Chest Pain Type:\n", oldpeak_by_cp.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Average ST Depression (oldpeak) by Chest Pain Type.png`
+*Visual :* `Heart_Health_Images/Average ST Depression (oldpeak) by Chest Pain Type.png`
 
 #### Exact Output & Findings
 - **Type 0 (Typical Angina):** Mean = **1.44 mm** (Median: 1.2, Std: 1.30)
@@ -462,7 +459,7 @@ ST depression $\ge 1.0\text{ mm}$ during exertion reflects subendocardial ischem
 thal_target = pd.crosstab(df['thal'], df['target'], normalize='index') * 100
 print("Heart Disease Rate across Thalassemia Categories:\n", thal_target.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Heart Disease Presence across Thalassemia Types.png`
+*Visual :* `Heart_Health_Images/Heart Disease Presence across Thalassemia Types.png`
 
 #### Exact Output & Findings
 - **`thal = 0` (Artifact/Null):** 42.86% heart disease ($3 / 7$)
@@ -517,8 +514,8 @@ disease_stats = df[df['target'] == 1][['trestbps', 'chol', 'thalach', 'oldpeak']
 no_disease_stats = df[df['target'] == 0][['trestbps', 'chol', 'thalach', 'oldpeak']].describe()
 print("Heart Disease (Target = 1):\n", disease_stats.round(1))
 print("\nNo Heart Disease (Target = 0):\n", no_disease_stats.round(1))
-```
-*Visual Artifact References:*
+``` 
+*Visual:*
 - `Heart_Health_Images/Max Heart Rate by Target.png`
 - `Heart_Health_Images/ST Depression by Target.png`
 - `Heart_Health_Images/Resting BP by Target.png`
@@ -561,7 +558,7 @@ sns.pairplot(
 plt.suptitle('Multi-Risk Factor Interaction (Age, Chol, Trestbps)', y=1.02)
 plt.show()
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Multi-Risk Factor Interaction (Age, Chol, Trestbps).png`
+*Visual:* `Heart_Health_Images/Multi-Risk Factor Interaction (Age, Chol, Trestbps).png`
 
 #### Findings & Clinical Interpretation
 Bivariate projections show substantial overlap between diseased and healthy distributions when evaluating age, cholesterol, and blood pressure in isolation. However, multi-dimensional density estimation reveals that the confluence of systolic blood pressure $>130\text{ mm Hg}$, serum cholesterol $>240\text{ mg/dl}$, and age between $50-65$ creates a dense cluster of positive cardiac events.
@@ -578,7 +575,7 @@ Bivariate projections show substantial overlap between diseased and healthy dist
 correlations = df.corr(numeric_only=True)['target'].sort_values()
 print("Feature Correlations with Target:\n", correlations.round(3))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Feature Correlations with Target (Heart Disease).png`
+*Visual:* `Heart_Health_Images/Feature Correlations with Target (Heart Disease).png`
 
 #### Exact Output & Ranked Correlations
 ```
@@ -671,7 +668,7 @@ sex            -0.7817              0.4576           Negative
 slope_cp_dist = pd.crosstab(df['cp'], df['slope'], normalize='index') * 100
 print("ST Slope Distribution across Chest Pain Types (%):\n", slope_cp_dist.round(2))
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Exercise ST Slope Variation by Chest Pain Type.png`
+*Visual:* `Heart_Health_Images/Exercise ST Slope Variation by Chest Pain Type.png`
 
 #### Exact Output & Findings Table
 | Chest Pain (`cp`) | Slope 0 (Upsloping) | Slope 1 (Flat) | Slope 2 (Downsloping) |
@@ -711,7 +708,7 @@ plt.ylabel('Thalassemia Type Code')
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.show()
 ```
-*Visual Artifact Reference:* `Heart_Health_Images/Thalassemia Category Trends Across Patient Age by Diagnosis.png`
+*Visual :* `Heart_Health_Images/Thalassemia Category Trends Across Patient Age by Diagnosis.png`
 
 #### Findings & Clinical Interpretation
 Tracking thalassemia nuclear scan categories across ages 30 to 75 illustrates that confirmed heart disease patients consistently average lower `thal` scores centered tightly around **2.0 (Fixed Defect / Infarcted Scar)** across all age brackets. Non-diseased patients average higher scores ($2.4 - 2.6$, reflecting reversible defect or normal scans). This stability across decades proves that fixed myocardial defects are disease-driven rather than simple age-related degenerative changes.

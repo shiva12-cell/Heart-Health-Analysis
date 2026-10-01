@@ -1,7 +1,7 @@
 # Pulse of Prevention: Analyzing Heart Health for Better Outcomes
 ## Additional Resources & Curated References
 
-**Prepared by:** HealthPulse Analytics Technical Documentation Team  
+
 **Focus Areas:** Clinical Cardiology, Biostatistics, Machine Learning in Medicine, Healthcare Governance  
 **Companion Documents:** [Case Study Document](file:///c:/Users/abcom/Downloads/Heart%20Health/Case_Study_Document.md) | [Solution Guide](file:///c:/Users/abcom/Downloads/Heart%20Health/Solution_Guide.md)  
 

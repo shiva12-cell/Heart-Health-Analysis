@@ -27,8 +27,8 @@ Cardiovascular disease remains the leading cause of global mortality, yet a sign
 
 ## Repository Structure
 ├── Data/
-│   ├── EDA03 - Heart Health Analysis.pdf     |# Visual analysis report and presentation
-│   └── heart.csv                             | # Raw clinical dataset (303 rows x 14 columns)
+│   ├── EDA03 - Heart Health Analysis.pdf     |# Visual analysis report and presentation |
+│   └── heart.csv                             | # Raw clinical dataset (303 rows x 14 columns) |
 
 ├── Notebook/
 │   └── heart-health-analysis.ipynb            # Jupyter notebook containing EDA, modeling & evaluation

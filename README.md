@@ -26,17 +26,26 @@ Cardiovascular disease remains the leading cause of global mortality, yet a sign
 ---
 
 ## Repository Structure
+├── Data/
 
-**├── Data/
 │   ├── heart.csv                              # Raw clinical dataset (303 rows x 14 columns)
+
 │   └── heart_cleaned.csv                      # Processed and standardized dataset
+
 ├── Notebooks/
+
 │   └── cardiovascular_risk_analysis.ipynb     # Jupyter notebook containing EDA, modeling & evaluation
+
 ├── Outputs/
+
 │   ├── clinical_risk_dashboard.pdf            # Executive summary report and diagnostic visuals
+
 │   └── feature_importance.png                 # Model coefficient plot & risk driver chart
+
 ├── Case_Study_Document.md                     # Comprehensive clinical methodology report
+
 └── README.md                                  # Project overview and documentation**
+
 ---
 
 ## Data Dictionary

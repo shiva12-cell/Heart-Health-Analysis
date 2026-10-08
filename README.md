@@ -13,6 +13,17 @@ Cardiovascular disease remains the leading cause of global mortality, yet a sign
 * **Cost & Care Optimization:** Shifting hospital resources from costly emergency surgical procedures to targeted preventative lifestyle and metabolic interventions.
 
 ---
+## Repository Structure
+
+├── Data/
+│   ├── EDA03 - Heart Health Analysis.pdf      # Visual analysis report and presentation
+│   └── heart.csv                              # Raw clinical dataset (303 rows x 14 columns)
+├── Notebook/
+│   └── heart-health-analysis.ipynb            # Jupyter notebook containing EDA, modeling & evaluation
+├── Additional_Resources.md                    # Supplementary documentation & notes
+├── Case_Study_Document.md                     # Comprehensive clinical methodology report
+├── Solution_Guide.md                          # Complete analytical steps and answers
+└── README.md                                  # Project overview and documentation
 
 ## Key Metrics Summary
 
@@ -25,18 +36,6 @@ Cardiovascular disease remains the leading cause of global mortality, yet a sign
 
 ---
 
-## Repository Structure
-├── Data/
-│   ├── EDA03 - Heart Health Analysis.pdf     |# Visual analysis report and presentation |
-│   └── heart.csv                             | # Raw clinical dataset (303 rows x 14 columns) |
-
-├── Notebook/
-│   └── heart-health-analysis.ipynb            # Jupyter notebook containing EDA, modeling & evaluation
-
-├── Additional_Resources.md                    # Supplementary documentation & notes
-├── Case_Study_Document.md                     # Comprehensive clinical methodology report
-├── Solution_Guide.md                          # Complete analytical steps and answers
-└── README.md                                  # Project overview and documentation
 
 ## Data Dictionary
 
